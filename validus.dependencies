@@ -1,9 +1,9 @@
 [
  {
    "remote":      "github",
-   "repository":  "CyanogenMod/android_kernel_htc_flounder",
+   "repository":  "Validus-Kernel/kernel_htc_flounder",
    "target_path": "kernel/htc/flounder",
-   "branch":      "cm-12.1"
+   "branch":      "lp"
  },
  {
    "remote":      "github",
