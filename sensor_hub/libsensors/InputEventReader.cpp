@@ -17,9 +17,11 @@
 #include <errno.h>
 #include <poll.h>
 #include <stdint.h>
+#include <string.h>
 #include <sys/cdefs.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <string.h>
 
 #include <cutils/log.h>
 
