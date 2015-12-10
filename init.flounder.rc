@@ -5,11 +5,16 @@ on init
     # Load persistent dm-verity state
     verity_load_state
 
-    start watchdogd
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
+
+    start watchdogd
 
 on post-fs
     write /sys/power/gpu_power_on 1
@@ -127,6 +132,10 @@ on fs
 
 on verity-logging
     exec u:r:slideshow:s0 -- /sbin/slideshow warning/verity_red_1 warning/verity_red_2
+
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 service battery_charger /charger
     class charger
