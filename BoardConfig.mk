@@ -60,11 +60,11 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_USES_GENERIC_INVENSENSE := false
 
 # Optimizations
-CLANG_O3 := true
+CLANG_O3 := false
 STRICT_ALIASING := false
-KRAIT_TUNINGS := true
+KRAIT_TUNINGS := false
 GRAPHITE_OPTS := false
-ENABLE_GCCONLY := true
+ENABLE_GCCONLY := false
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so
